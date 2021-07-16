@@ -1,6 +1,7 @@
 package com.example.domain.model
 
 data class Money(
+
     val id : Long,
     val checked : String,
     val date : String,
@@ -8,5 +9,4 @@ data class Money(
     val separation : String,
     val use : String,
     val description: String,
-    val hasCompleted : Boolean = false
 )
