@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="64dp">
 
-    <com.google.android.material.checkbox.MaterialCheckBox
-        android:id="@+id/checkBox"
+    <TextView
+        android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="8dp"

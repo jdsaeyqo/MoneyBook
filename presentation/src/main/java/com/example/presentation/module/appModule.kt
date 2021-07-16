@@ -33,7 +33,7 @@ internal val appModule = module {
     single { provideDB(androidApplication()) }
     single { provideToDoDao(get()) }
 
-    viewModel{ListViewModel(get(),get(),get(),get())}
+    viewModel{ListViewModel(get(),get(),get())}
     viewModel{ (detailMode : DetailMode, id : Long) -> DetailViewModel(detailMode,id,get(),get(),get(),get())}
 
 

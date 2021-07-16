@@ -91,9 +91,8 @@ internal class ListActivity : BaseActivity<ListViewModel, ActivityListBinding>()
                         DetailActivity.getIntent(this@ListActivity, it.id, DetailMode.DETAIL),
                         DetailActivity.FETCH_REQUEST_CODE
                     )
-                }, moneyCheckListener = {
-                    viewModel.updateEntity(it)
                 }
+
             )
 
             val result = viewModel.setMoneyResult(state.moneyList)

@@ -73,7 +73,7 @@ internal class DetailViewModel(
 
             DetailMode.WRITE -> {
                 try {
-                    val moneyData = Money(id = id,checked = checked,date = date,money = money,separation = separation,use = use,description = description)
+                    val moneyData = Money(0,checked = checked,date = date,money = money,separation = separation,use = use,description = description)
                     id = insertMoneyUseCase(moneyData)
                     _moneyDetailLiveData.postValue(MoneyDetailState.Success(moneyData))
                     detailMode  = DetailMode.DETAIL
@@ -87,6 +87,7 @@ internal class DetailViewModel(
                 try {
                     getMoneyItemUseCase(id)?.let {
                         val updateMoney = it.copy(checked = checked,date = date,money = money,separation = separation,use = use,description = description)
+
                         updateMoneyUseCase(updateMoney)
                         _moneyDetailLiveData.postValue(MoneyDetailState.Success(updateMoney))
                     } ?: kotlin.run {

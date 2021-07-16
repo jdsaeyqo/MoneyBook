@@ -111,13 +111,20 @@ internal class DetailActivity : BaseActivity<DetailViewModel, ActivityDetailBind
             viewModel.setModifyMode()
         }
         updateButton.setOnClickListener {
+            val checked = checkTextView.text.toString()
+            val date = dateTextView.text.toString()
+            val money = moneyEditText.text.toString()
+            val separation = sepEditText.text.toString()
+            val use = useEditText.text.toString()
+            val description = descriptionEditText.text.toString()
+
+            if(money == ""){
+                Toast.makeText(this@DetailActivity,"금액을 입력해 주세요",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             viewModel.writeMoney(
-                checked = checkTextView.text.toString(),
-                date = dateTextView.text.toString(),
-                money = moneyEditText.text.toString(),
-                separation = sepEditText.text.toString(),
-                use = useEditText.text.toString(),
-                description = descriptionEditText.text.toString()
+                checked,date,money, separation, use, description
             )
             finish()
         }
