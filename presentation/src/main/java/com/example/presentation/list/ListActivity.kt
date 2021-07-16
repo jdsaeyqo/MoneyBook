@@ -7,11 +7,15 @@ import android.view.MenuItem
 import androidx.core.view.isGone
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.presentation.R
+import com.example.presentation.adapter.MoneyAdapter
 import com.example.presentation.base.BaseActivity
 import com.example.presentation.databinding.ActivityListBinding
+import com.example.presentation.detail.DetailActivity
+import com.example.presentation.detail.DetailMode
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import org.koin.android.viewmodel.ext.android.viewModel
 import kotlin.coroutines.CoroutineContext
 
 
@@ -37,16 +41,11 @@ internal class ListActivity : BaseActivity<ListViewModel, ActivityListBinding>()
 
         addMoneyButton.setOnClickListener {
             startActivityForResult(
-                DetailActivity.getIntent(this@ListActivity,DetailMode.WRITE),
+                DetailActivity.getIntent(this@ListActivity, DetailMode.WRITE),
                 DetailActivity.FETCH_REQUEST_CODE
             )
         }
 
-        moveSongButton.setOnClickListener {
-
-            startActivity(Intent(this@ListActivity,SongActivity::class.java))
-
-        }
     }
 
     override fun observeData() {
