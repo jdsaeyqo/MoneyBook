@@ -8,7 +8,7 @@ class UpdateMoneyUseCase(
     private val moneyRepository: MoneyRepository
 ) : UseCase {
 
-    suspend operator fun invoke(moneyEntity: Money){
-        return moneyRepository.updateMoneyItem(moneyEntity)
+    suspend operator fun invoke(money: Money){
+        return moneyRepository.updateMoneyItem(money)
     }
 }

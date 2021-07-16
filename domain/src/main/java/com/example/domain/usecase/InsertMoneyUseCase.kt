@@ -8,7 +8,7 @@ class InsertMoneyUseCase(
     private val moneyRepository: MoneyRepository
 ) : UseCase {
 
-    suspend operator fun invoke(moneyEntity: Money):Long{
-        return moneyRepository.insertMoneyItem(moneyEntity)
+    suspend operator fun invoke(money: Money):Long{
+        return moneyRepository.insertMoneyItem(money)
     }
 }
