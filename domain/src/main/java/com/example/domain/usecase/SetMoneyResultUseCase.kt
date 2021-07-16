@@ -6,18 +6,20 @@ import java.text.DecimalFormat
 
 class SetMoneyResultUseCase : UseCase {
 
-    operator fun invoke(moneyList: List<Money>) : Array<String>{
+    operator fun invoke(moneyList: List<Money>?) : Array<String>{
 
         val decimal = DecimalFormat("###,###")
 
         var income = 0
         var outcome = 0
 
-        moneyList.forEach {
-            if(it.checked == "수입"){
-                income += it.money.toInt()
-            }else{
-                outcome += it.money.toInt()
+        moneyList?.let {list ->
+            list.forEach {
+                if(it.checked == "수입"){
+                    income += it.money.toInt()
+                }else{
+                    outcome += it.money.toInt()
+                }
             }
         }
 
