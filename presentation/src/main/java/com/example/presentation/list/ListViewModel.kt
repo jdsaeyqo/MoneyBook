@@ -3,6 +3,12 @@ package com.example.presentation.list
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.example.data.entity.MoneyEntity
+import com.example.domain.model.Money
+import com.example.domain.usecase.DeleteAllMoneyItemUseCase
+import com.example.domain.usecase.GetMoneyListUseCase
+import com.example.domain.usecase.SetMoneyResultUseCase
+import com.example.domain.usecase.UpdateMoneyUseCase
 import com.example.presentation.base.BaseViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
@@ -24,8 +30,8 @@ internal class ListViewModel(
         _moneyListLiveData.postValue(MoneyState.Success(getMoneyListUseCase()))
     }
 
-    fun updateEntity(moneyEntity: MoneyEntity) = viewModelScope.launch {
-        updateMoneyUseCase(moneyEntity)
+    fun updateEntity(money: Money) = viewModelScope.launch {
+        updateMoneyUseCase(money)
     }
 
 
@@ -35,7 +41,7 @@ internal class ListViewModel(
         _moneyListLiveData.postValue(MoneyState.Success(getMoneyListUseCase()))
     }
 
-    fun setMoneyResult(moneyList: List<MoneyEntity>) : Array<String>{
+    fun setMoneyResult(moneyList: List<Money>) : Array<String>{
 
         return setMoneyResultUseCase(moneyList)
 
