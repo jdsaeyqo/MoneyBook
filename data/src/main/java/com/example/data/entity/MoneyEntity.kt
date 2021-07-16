@@ -13,7 +13,6 @@ data class MoneyEntity(
     val separation : String,
     val use : String,
     val description: String,
-    val hasCompleted : Boolean = false
 
 ) {
 }
