@@ -14,10 +14,8 @@ object MoneyMapper {
             separation = moneyEntity.separation,
             use = moneyEntity.use,
             description = moneyEntity.description,
-            hasCompleted = moneyEntity.hasCompleted
         )
     }
-
     fun mapperToMoneyEntity(money: Money) : MoneyEntity{
         return MoneyEntity(
             id = money.id,
@@ -27,7 +25,6 @@ object MoneyMapper {
             separation = money.separation,
             use = money.use,
             description = money.description,
-            hasCompleted = money.hasCompleted,
         )
     }
 }
