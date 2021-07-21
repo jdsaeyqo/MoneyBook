@@ -28,35 +28,40 @@
                 android:visibility="gone"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/moneyLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
-                android:orientation="horizontal"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:textColor="@color/black"
+                    android:paddingVertical="5dp"
                     android:id="@+id/incomeTextView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/income_backgroud"
                     android:gravity="center"
                     android:text="수입"
-                    android:textSize="20sp" />
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toStartOf="@id/outcomeTextView"
+                    app:layout_constraintStart_toStartOf="@id/moneyLayout" />
 
                 <TextView
-                    android:textColor="@color/black"
+                    android:paddingVertical="5dp"
                     android:id="@+id/outcomeTextView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/outcome_background"
                     android:gravity="center"
                     android:text="지출"
-                    android:textSize="20sp" />
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="@id/moneyLayout"
+                    app:layout_constraintStart_toEndOf="@id/incomeTextView" />
 
-            </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
                 android:id="@+id/dateLayout"
@@ -71,17 +76,17 @@
                     android:id="@+id/dateTextView"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="3"
+                    android:layout_weight="7"
                     android:gravity="center|start"
                     android:hint="@string/date"
                     android:textSize="20sp" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnSetDate"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/pick_date" />
+                    android:background="@drawable/ic_calendar" />
 
             </LinearLayout>
 
