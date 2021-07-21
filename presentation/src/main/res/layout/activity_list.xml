@@ -119,9 +119,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        android:contentDescription="addToDoButton"
-        android:src="@drawable/ic_plus"
-        app:backgroundTint="@color/black"
+        android:contentDescription="@string/add_todo_btn"
+        android:src="@drawable/ic_money"
+        app:backgroundTint="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:tint="@color/white" />
