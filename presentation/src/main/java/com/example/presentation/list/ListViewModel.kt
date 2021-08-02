@@ -36,7 +36,6 @@ internal class ListViewModel(
     fun setMoneyResult(moneyList: List<Money>) : Array<String>{
 
         return setMoneyResultUseCase(moneyList)
-        println("dfasdfasfd")
 
     }
 
